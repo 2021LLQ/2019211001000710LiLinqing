@@ -3,7 +3,60 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+    <!--<context-param>
+    <param-name>driver</param-name>
+    <param-value>com.microsoft.sqlserver.jdbc.SQLServerDriver</param-value>
+</context-param>
+    <context-param>
+        <param-name>url</param-name>
+        <param-value>jdbc:sqlserver://localhost:1433;databaseName=userdb</param-value>
+    </context-param>
+    <context-param>
+        <param-name>username</param-name>
+        <param-value>sa</param-value>
+    </context-param>
+    <context-param>
+        <param-name>password</param-name>
+        <param-value>Li123456</param-value>
+    </context-param>-->
     <!--add code about servlet-->
+    <!--    Task1-->
+    <!--<servlet>
+        <servlet-name>ConfigDemoServlet</servlet-name>
+        <servlet-class>com.LiLinqing.week4.demo.ConfigServlet</servlet-class>
+    </servlet>-->
+<!--
+    <servlet-mapping>
+        <servlet-name>ConfigDemoServlet</servlet-name>
+        <url-pattern>/config</url-pattern>
+    </servlet-mapping>-->
+  <!--  <context-param>
+        <param-name>name</param-name>
+        <param-value>LiLinqing</param-value>
+    </context-param>
+    <context-param>
+        <param-name>student-id</param-name>
+        <param-value>201921100100710</param-value>
+    </context-param>-->
+    <context-param>
+        <param-name>driver</param-name>
+        <param-value>com.microsoft.sqlserver.jdbc.SQLServerDriver</param-value>
+    </context-param>
+    <context-param>
+        <param-name>url</param-name>
+        <param-value>jdbc:sqlserver://localhost:1433;DatabaseName=userdb</param-value>
+    </context-param>
+    <context-param>
+        <param-name>Username</param-name>
+        <param-value>sa</param-value>
+    </context-param>
+    <context-param>
+        <param-name>Password</param-name>
+        <param-value>Li123456</param-value>
+    </context-param>
+<!--就是这里-->
+
+
     <servlet>
         <servlet-name>First</servlet-name><!--give any name-->
         <servlet-class>com.LiLinqing.week2.demo.HelloWorldServlet</servlet-class><!--package +name or servlet class-->
@@ -12,10 +65,27 @@
         <servlet-name>LifeCycleServlet</servlet-name>
         <servlet-class>com.LiLinqing.week3.demo.LifeCycleServlet</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>RegisterServlet</servlet-name>
-        <servlet-class>com.LiLinqing.week3.demo.RegisterServlet</servlet-class>
+
+   <!-- <servlet>
+        <servlet-name>JDBCDDemoServlet</servlet-name>
+        <servlet-class>com.week4.demo.JDBCDDemoServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ConfigServlet</servlet-name>
+        <servlet-class>com.LiLinqing.week4.demo.ConfigServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>JDBCDDemoServlet</servlet-name>
+        <url-pattern>/jdbc</url-pattern>
+    </servlet-mapping>-->
+    <!--<servlet>
+        <servlet-name>ConfigServlet</servlet-name>
+        <servlet-class>com.LiLinqing.week4.demo.ConfigServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>configServlet</servlet-name>
+        <servlet-class>com.LiLinqing.week4.demo.configServlet</servlet-class>
+    </servlet>-->
 
 
     <servlet-mapping>
@@ -29,8 +99,15 @@
         <servlet-name>LifeCycleServlet</servlet-name>
         <url-pattern>/life</url-pattern>
     </servlet-mapping>
+<!--
+<servlet>
+<servlet-name>RegisterServlet</servlet-name>
+<servlet-class>com.LiLinqing.week3.demo.RegisterServlet</servlet-class>
+</servlet>
     <servlet-mapping>
         <servlet-name>RegisterServlet</servlet-name>
         <url-pattern>/register</url-pattern>
-    </servlet-mapping>
+    </servlet-mapping>-->
 </web-app>
+
+
