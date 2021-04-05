@@ -47,11 +47,11 @@
         <param-value>jdbc:sqlserver://localhost:1433;DatabaseName=userdb</param-value>
     </context-param>
     <context-param>
-        <param-name>Username</param-name>
+        <param-name>username</param-name>
         <param-value>sa</param-value>
     </context-param>
     <context-param>
-        <param-name>Password</param-name>
+        <param-name>password</param-name>
         <param-value>Li123456</param-value>
     </context-param>
 <!--就是这里-->
