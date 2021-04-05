@@ -65,19 +65,23 @@
         <servlet-name>LifeCycleServlet</servlet-name>
         <servlet-class>com.LiLinqing.week3.demo.LifeCycleServlet</servlet-class>
     </servlet>
-
-   <!-- <servlet>
-        <servlet-name>JDBCDDemoServlet</servlet-name>
-        <servlet-class>com.week4.demo.JDBCDDemoServlet</servlet-class>
-    </servlet>
     <servlet>
-        <servlet-name>ConfigServlet</servlet-name>
-        <servlet-class>com.LiLinqing.week4.demo.ConfigServlet</servlet-class>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.LiLinqing.week5.demo.LoginServlet</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>JDBCDDemoServlet</servlet-name>
-        <url-pattern>/jdbc</url-pattern>
-    </servlet-mapping>-->
+
+    <!-- <servlet>
+         <servlet-name>JDBCDDemoServlet</servlet-name>
+         <servlet-class>com.week4.demo.JDBCDDemoServlet</servlet-class>
+     </servlet>
+     <servlet>
+         <servlet-name>ConfigServlet</servlet-name>
+         <servlet-class>com.LiLinqing.week4.demo.ConfigServlet</servlet-class>
+     </servlet>
+     <servlet-mapping>
+         <servlet-name>JDBCDDemoServlet</servlet-name>
+         <url-pattern>/jdbc</url-pattern>
+     </servlet-mapping>-->
     <!--<servlet>
         <servlet-name>ConfigServlet</servlet-name>
         <servlet-class>com.LiLinqing.week4.demo.ConfigServlet</servlet-class>
