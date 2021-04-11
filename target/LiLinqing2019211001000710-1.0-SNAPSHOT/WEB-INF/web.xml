@@ -69,6 +69,14 @@
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>com.LiLinqing.week5.demo.LoginServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RedirectServlet</servlet-name>
+        <servlet-class>com.LiLinqing.week6.demo.RedirectServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchServlet</servlet-name>
+        <servlet-class>com.LiLinqing.week6.demo.SearchServlet</servlet-class>
+    </servlet>
 
     <!-- <servlet>
          <servlet-name>JDBCDDemoServlet</servlet-name>

@@ -1,4 +1,3 @@
-
 package com.LiLinqing.week3.demo;
 import javax.servlet.*;
 import javax.servlet.annotation.WebInitParam;
@@ -17,7 +16,8 @@ public class RegisterServlet extends HttpServlet {
     Connection con=null;
     @Override
     public void init() throws ServletException {
-        String driver=getServletConfig().getServletContext().getInitParameter("driver");
+        super.init();
+       /* String driver=getServletConfig().getServletContext().getInitParameter("driver");
         String url=getServletConfig().getServletContext().getInitParameter("url");
         String username=getServletConfig().getServletContext().getInitParameter("username");
         String password=getServletConfig().getServletContext().getInitParameter("password");
@@ -27,21 +27,22 @@ public class RegisterServlet extends HttpServlet {
             System.out.println("init()-->"+con);
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
-        }
+        }*/
+        con=(Connection) getServletContext().getAttribute("con");
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        doPost(request,response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String username=request.getParameter("name");
+        String username=request.getParameter("username");
         String password=request.getParameter("password");
         String email=request.getParameter("email");
         String gender=request.getParameter("gender");
-        String birthdate=request.getParameter("date");
+        String birthdate=request.getParameter("birthdate");
 
         /*PrintWriter writer= response.getWriter();
         writer.println("<br>Username :"+Username);
@@ -60,36 +61,40 @@ public class RegisterServlet extends HttpServlet {
             pstmt.setString(4,gender);
             pstmt.setString(5,birthdate);
             pstmt.executeUpdate();
+            response.sendRedirect("login.jsp");
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        response.setContentType("text/html");
+        /*response.setContentType("text/html");
         PrintWriter out=response.getWriter();
         out.println("<html>");
         out.println("<head><title>Register</title></head>");
         out.println("<body>");
         out.println("<table>");
         out.println("<tr><td>ID</td><td>username</td><td>password</td><td>Email</td><td>Gender</td><td>Birthdate</td></tr>");
-        String sql2="select * from usertable";
+        *//*String sql2="select * from usertable";
         ResultSet rs= null;
         try {
-            rs = con.createStatement().executeQuery(sql2);
-            while(rs.next()){
+            rs = con.createStatement().executeQuery(sql2);*/
+            /*while(rs.next()){
                 int id=rs.getInt("id");
                 String Username=rs.getString("username");
                 String Password1=rs.getString("password");
                 String Email=rs.getString("email");
                 String Gender=rs.getString("gender");
-                Date Birthdate=rs.getDate("birthdate");
-                SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
-                out.println("<tr><td>"+id+"</td><td>"+Username+"</td><td>"+Password1+"</td><td>"+Email+"</td><td>"+Gender+"</td><td>"+sdf.format(Birthdate)+"</td></tr>");
-            }
+                String Birthdate=rs.getString("birthdate");
+
+                out.println("<tr><td>"+id+"</td><td>"+Username+"</td><td>"+Password1+"</td><td>"+Email+"</td><td>"+Gender+"</td><td>"+Birthdate+"</td></tr>");
+            }*/
+            /*request.setAttribute("rsname",rs);
+            request.getRequestDispatcher("userList.jsp").forward(request,response);
+            System.out.println("i am in RegisterServlet-->doPost()-->after forward()");
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-        }
-        out.println("</table>");
+        }*/
+        /*out.println("</table>");
         out.println("</body>");
-        out.println("</html>");
+        out.println("</html>");*/
     }
 
     @Override
