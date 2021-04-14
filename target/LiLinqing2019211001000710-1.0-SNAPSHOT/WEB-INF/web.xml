@@ -3,22 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-    <!--<context-param>
-    <param-name>driver</param-name>
-    <param-value>com.microsoft.sqlserver.jdbc.SQLServerDriver</param-value>
-</context-param>
-    <context-param>
-        <param-name>url</param-name>
-        <param-value>jdbc:sqlserver://localhost:1433;databaseName=userdb</param-value>
-    </context-param>
-    <context-param>
-        <param-name>username</param-name>
-        <param-value>sa</param-value>
-    </context-param>
-    <context-param>
-        <param-name>password</param-name>
-        <param-value>Li123456</param-value>
-    </context-param>-->
+
     <!--add code about servlet-->
     <!--    Task1-->
     <!--<servlet>
@@ -77,6 +62,10 @@
         <servlet-name>SearchServlet</servlet-name>
         <servlet-class>com.LiLinqing.week6.demo.SearchServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>HomeServlet</servlet-name>
+        <servlet-class>com.LiLinqing.controller.HomeServlet</servlet-class>
+    </servlet>
 
     <!-- <servlet>
          <servlet-name>JDBCDDemoServlet</servlet-name>
@@ -111,6 +100,9 @@
         <servlet-name>LifeCycleServlet</servlet-name>
         <url-pattern>/life</url-pattern>
     </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>home</welcome-file>
+    </welcome-file-list>
 <!--
 <servlet>
 <servlet-name>RegisterServlet</servlet-name>
