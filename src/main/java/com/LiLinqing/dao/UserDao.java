@@ -7,7 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
+
 import java.util.List;
 
 public class UserDao implements IUserDao {
@@ -180,12 +180,12 @@ public class UserDao implements IUserDao {
     }
 
     @Override
-    public List<User> findByBirthdate(Connection con, Date birthDate) throws SQLException {
+    public List<User> findByBirthdate(Connection con, String birthDate) throws SQLException {
         List<User> userList=new ArrayList<User>();
 
         String sql="select * from usertable where birthday=?";
         PreparedStatement ps=con.prepareStatement(sql);
-        ps.setDate(1, (java.sql.Date) birthDate);
+
         ResultSet rs=ps.executeQuery();
         User user=new User();
         while(rs.next()) {

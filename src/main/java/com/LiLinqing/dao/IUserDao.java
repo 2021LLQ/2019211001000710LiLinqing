@@ -4,7 +4,7 @@ import com.LiLinqing.model.User;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.Date;
+
 import java.util.List;
 
 public interface IUserDao {
@@ -18,7 +18,7 @@ public interface IUserDao {
     public List<User> findByPassword(Connection con, String password) throws SQLException;
     public List<User> findByEmail(Connection con,String email) throws SQLException;
     public List<User> findByGender(Connection con,String gender) throws SQLException;
-    public List<User> findByBirthdate(Connection con, Date birthDate) throws SQLException;
+    public List<User> findByBirthdate(Connection con, String birthDate) throws SQLException;
     public List<User> findAllUser(Connection con) throws SQLException;
 
 

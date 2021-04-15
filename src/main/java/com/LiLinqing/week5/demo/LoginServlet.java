@@ -23,13 +23,13 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request, response);
+        //doPost(request, response);
         request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        PrintWriter out = response.getWriter();
+        //PrintWriter out = response.getWriter();
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
@@ -39,9 +39,9 @@ public class LoginServlet extends HttpServlet {
 
             if (user != null) {
                 request.setAttribute("user", user);
-                request.getRequestDispatcher("WEB-INF/views/userinfo.jsp").forward(request, response);
+                request.getRequestDispatcher("WEB-INF/views/userInfo.jsp").forward(request, response);
             } else {
-                request.setAttribute("message", "Username or Password Error!!!");
+                request.setAttribute("message", "Username or Password Error");
                 request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request, response);
             }
 
@@ -66,7 +66,7 @@ public class LoginServlet extends HttpServlet {
                 request.setAttribute("email",rs.getString("email"));
                 request.setAttribute("gender",rs.getString("gender"));
                 request.setAttribute("birthdate",rs.getDate("birthdate"));
-                request.getRequestDispatcher("userinfo.jsp").forward(request,response);
+                request.getRequestDispatcher("userInfo.jsp").forward(request,response);
             }else {
 
                 request.setAttribute("message","Username or password Error!!!");
@@ -75,9 +75,9 @@ public class LoginServlet extends HttpServlet {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-    }
+    }*/
 
-    @Override
+    /*@Override
     public void destroy() {
         super.destroy();
         try {
