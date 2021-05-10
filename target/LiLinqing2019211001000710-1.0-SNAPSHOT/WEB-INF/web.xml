@@ -66,33 +66,19 @@
         <servlet-name>HomeServlet</servlet-name>
         <servlet-class>com.LiLinqing.controller.HomeServlet</servlet-class>
     </servlet>
-
-    <!-- <servlet>
-         <servlet-name>JDBCDDemoServlet</servlet-name>
-         <servlet-class>com.week4.demo.JDBCDDemoServlet</servlet-class>
-     </servlet>
-     <servlet>
-         <servlet-name>ConfigServlet</servlet-name>
-         <servlet-class>com.LiLinqing.week4.demo.ConfigServlet</servlet-class>
-     </servlet>
-     <servlet-mapping>
-         <servlet-name>JDBCDDemoServlet</servlet-name>
-         <url-pattern>/jdbc</url-pattern>
-     </servlet-mapping>-->
-    <!--<servlet>
-        <servlet-name>ConfigServlet</servlet-name>
-        <servlet-class>com.LiLinqing.week4.demo.ConfigServlet</servlet-class>
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>com.LiLinqing.controller.LogoutServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>configServlet</servlet-name>
-        <servlet-class>com.LiLinqing.week4.demo.configServlet</servlet-class>
-    </servlet>-->
-
+        <servlet-name>UpdateUserServlet</servlet-name>
+        <servlet-class>com.LiLinqing.controller.UpdateUserServlet</servlet-class>
+    </servlet>
 
     <servlet-mapping>
     <servlet-name>First</servlet-name>
-    <url-pattern>/hello</url-pattern><!-- url must start with /-->
-</servlet-mapping>
+    <url-pattern>/hello1</url-pattern><!-- url must start with /-->
+    </servlet-mapping>
     <!-- x= 5, a = x so we can say a=5
     so /hello==com.LiLinqing.week2.demoHelloWorldServlet
     -->
@@ -103,6 +89,34 @@
     <welcome-file-list>
         <welcome-file>home</welcome-file>
     </welcome-file-list>
+    <!-- 1st -->
+    <filter>
+        <filter-name>AuthFilter</filter-name>
+        <filter-class>com.LiLinqing.filter.AuthFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AuthFilter</filter-name>
+        <url-pattern>/hello</url-pattern>
+    </filter-mapping>
+    <!--2nd -write after ist one in web.xml-->
+    <filter>
+        <filter-name>HelloFilter</filter-name>
+        <filter-class>com.LiLinqing.filter.HelloFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>HelloFilter</filter-name>
+        <url-pattern>/hello</url-pattern>
+    </filter-mapping>-->
+    <!--3rd-->
+    <filter>
+        <filter-name>LoggerFilter</filter-name>
+        <filter-class>com.LiLinqing.filter.LoggerFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LoggerFilter</filter-name>
+        <url-pattern>/hello</url-pattern>
+    </filter-mapping>
+
 <!--
 <servlet>
 <servlet-name>RegisterServlet</servlet-name>
