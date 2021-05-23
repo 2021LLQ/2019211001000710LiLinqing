@@ -5,6 +5,7 @@ import com.LiLinqing.model.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -13,21 +14,19 @@ import java.util.List;
 public class UserDao implements IUserDao {
     @Override
     public boolean saveUser(Connection con, User user) throws SQLException {
-        String sql="INSERT INTO usertable VALUES (?,?,?,?,?,?);";
-        PreparedStatement pstmt =con.prepareStatement(sql);
-        pstmt.setInt(1,user.getId());
-        pstmt.setString(2,user.getUsername());
-        pstmt.setString(3,user.getPassword());
-        pstmt.setString(4,user.getEmail());
-        pstmt.setString(5,user.getGender());
-        pstmt.setString(5,user.getBirthdate());
-
-
-        int rs = pstmt.executeUpdate();
-        if(rs==1) return true;
-        return false;
-        //insert into -do it yourself(write code yourself)
+        String sql="insert into Usertable values(?,?,?,?,?)";
+        PreparedStatement pstmt= con.prepareStatement(sql);
+        pstmt.setString(1,user.getUsername());
+        pstmt.setString(2,user.getPassword());
+        pstmt.setString(3,user.getEmail());
+        pstmt.setString(4,user.getGender());
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        pstmt.setString(5,formatter.format(user.getBirthdate()));
+        int a=pstmt.executeUpdate();
+        if(a!=0) return true;
+        else return false;
     }
+
 
     @Override
     public int deleteUser(Connection con, User user) throws SQLException {
